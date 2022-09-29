@@ -30,7 +30,20 @@ print(B)
 
 #entrada
 C = ['maria', 10, 20, 'josé', 'antônio', 30, 20, 40]
+C1 = []
+C2 = []
+for v in C:
+    if(type(v)==str):
+        C1.append(v)
+    else:
+        C2.append(v)   
+insertion_sort(C1)    
+insertion_sort(C2)    
+print(C1)    
+print(C2)    
+
 # saída
-R = ['antônio', 'josé', 'maria', 10,20,20,30,40]
+R = C1 + C2
+print(R)
 
 
