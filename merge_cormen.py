@@ -1,5 +1,5 @@
 import math
-A = [-1,8,15,24,0,6,16,22]
+A = [7,8,9,11,100,-1,0,4,6,7,9,10,11,300,999,10000000,5,6,7,9]
 
 # codigo 
 
@@ -25,5 +25,13 @@ def merge(A,p,q,r):
             j = j +1
     return A
 
-print(merge(A,0,3,7))
-assert merge(A,0,3,7)== [-1, 0, 6, 8, 15, 16, 22, 24]
+def merge_sort(A,p,r):
+    if(p < r):
+        q = (p+r)//2 # resultado inteiro da divisão
+        merge_sort(A,p,q)
+        merge_sort(A,q+1,r)
+        merge(A,p,q,r)
+
+print('antes: ', A)
+merge_sort(A,0,len(A)-1)
+print('depois: ' , A)
