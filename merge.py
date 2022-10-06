@@ -4,8 +4,6 @@ A = [-1,8,15,24,0,6,16,22]
 # codigo 
 
 def merge(A,p,q,r):
-    n1 = q - p +1
-    n2 =  r - q
     L = A[p:q+1]
     R = A[q+1:r+1]
     i =0
