@@ -26,7 +26,7 @@ inicio = time.time()
 insertion_sort(B)
 fim =  time.time()
 print('Tempo transcorrido = {}'.format(fim-inicio))
-print(B)
+
 
 #entrada
 C = ['maria', 10, 20, 'josé', 'antônio', 30, 20, 40]
@@ -38,9 +38,7 @@ for v in C:
     else:
         C2.append(v)   
 insertion_sort(C1)    
-insertion_sort(C2)    
-print(C1)    
-print(C2)    
+insertion_sort(C2)      
 
 # saída
 R = C1 + C2
