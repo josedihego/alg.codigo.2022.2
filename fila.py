@@ -20,7 +20,14 @@ class MyQueue:
         else:
             self.head =  self.head + 1
         return x
-
+    def print(self):
+        index = self.head
+        while(index < self.tail):
+            value =  ' <- '
+            if(index == self.tail-1): value= ''
+            print(self.Q[index], end=value)
+            index = (index + 1)%len(self.Q)
+'''
 fila = MyQueue()
 fila.enqueue(10)
 fila.enqueue(20)
@@ -30,4 +37,18 @@ fila.dequeue()
 fila.dequeue()
 fila.enqueue(18)
 fila.enqueue(99)
-print('fim')
+fila.print()
+'''
+file = open('fila.in', 'r')
+lines =  file.readlines()
+for l in lines:
+    fila =  MyQueue()
+    for e in l.split(' '):
+        if(e=='d'):
+            fila.dequeue()
+        elif(e=='e'):
+            pass
+        else:
+            fila.enqueue(int(e))
+    fila.print()
+    print('\n')
