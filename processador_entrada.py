@@ -1,4 +1,4 @@
-
+#type(eval(x))==float
 arquivo =  open('entrada_exemplo.in', 'r')
 linhas = arquivo.readlines()
 arquivo_saida = open('saida_exemplo.out', 'w')
