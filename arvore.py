@@ -25,7 +25,14 @@ class Tree:
             y.left = z
         else:
             y.right = z
-
+    
+    def tree_search(self, x, k):
+        if(x==None or x.key == k):
+            return x
+        if(k < x.key):
+            return self.tree_search(x.left, k)
+        else:
+            return self.tree_search(x.right , k)
 
 minhaQueridaArvore = Tree()
 minhaRaizinha = Node(41)
@@ -36,4 +43,9 @@ minhaQueridaArvore.insert(Node(65))
 minhaQueridaArvore.insert(Node(24))
 print('fim')
 
+noRetorno = minhaQueridaArvore.tree_search(minhaRaizinha,888)
+if(noRetorno!=None):
+    print('chave retornada: {}'.format(noRetorno.key))
+else:
+    print('No não eontrado')
 
