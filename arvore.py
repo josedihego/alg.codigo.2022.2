@@ -34,6 +34,20 @@ class Tree:
         else:
             return self.tree_search(x.right , k)
 
+    def tree_minimum(self, x):
+        while(x.left!= None):
+            x = x.left
+        return x
+
+    def tree_successor(self, x):
+        if x.right != None:
+            return self.tree_minimum(x.right)
+        y = x.p
+        while (y!= None and x==y.right):
+            x = y
+            y = y.p 
+        return y
+
 minhaQueridaArvore = Tree()
 minhaRaizinha = Node(41)
 minhaQueridaArvore.root =  minhaRaizinha
@@ -49,3 +63,8 @@ if(noRetorno!=None):
 else:
     print('No não eontrado')
 
+noMinimo = minhaQueridaArvore.tree_minimum(minhaRaizinha)
+print('Nó mínimo = {}'.format(noMinimo.key))
+
+sucessor = minhaQueridaArvore.tree_successor(minhaRaizinha)
+print('Sucessor raiz = {}'.format(sucessor.key))
